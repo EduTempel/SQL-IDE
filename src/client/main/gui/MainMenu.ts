@@ -8,6 +8,7 @@ import { TemplateUploader } from "../../../tools/TemplateUploader.js";
 import jQuery from "jquery";
 import { AllDatabaseExporterImporter } from "../../../tools/AllDatabaseExporterImporter.js";
 import { downloadFile } from "../../../tools/HtmlTools.js";
+import { SCHOOL_IMPRINT_URL, SCHOOL_PRIVACY_URL } from "./SchoolBranding.js";
 import { MainMenuMessages } from "./language/MainMenuMessages.js";
 import { SettingsGUI } from "../../settings/SettingsGUI.js";
 
@@ -204,11 +205,11 @@ export class MainMenu {
                             },
                             {
                                 identifier: "Impressum...",
-                                link: "https://www.learnj.de/doku.php?id=ide:impressum"
+                                link: SCHOOL_IMPRINT_URL
                             },
                             {
                                 identifier: "Datenschutzerklärung...",
-                                link: "https://www.learnj.de/doku.php?id=ide:datenschutzerklaerung"
+                                link: SCHOOL_PRIVACY_URL
                             },
                             {
                                 identifier: "<div class='jo_menu_version'>" + "Version " + APP_VERSION + " (" + BUILD_DATE + ")</div>",
