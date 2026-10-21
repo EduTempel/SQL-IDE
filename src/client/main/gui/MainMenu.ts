@@ -8,7 +8,7 @@ import { TemplateUploader } from "../../../tools/TemplateUploader.js";
 import jQuery from "jquery";
 import { AllDatabaseExporterImporter } from "../../../tools/AllDatabaseExporterImporter.js";
 import { downloadFile } from "../../../tools/HtmlTools.js";
-import { SCHOOL_IMPRINT_URL, SCHOOL_PRIVACY_URL } from "./SchoolBranding.js";
+import { SCHOOL_ADMIN_URL, SCHOOL_IMPRINT_URL, SCHOOL_PRIVACY_URL } from "./SchoolBranding.js";
 import { MainMenuMessages } from "./language/MainMenuMessages.js";
 import { SettingsGUI } from "../../settings/SettingsGUI.js";
 
@@ -231,7 +231,8 @@ export class MainMenu {
                     action: async () => {
                         let response = await ajaxAsync("servlet/getSingleUseSessionToken", {}) as GetSingleUseSessionTokenResponse;
                         if (response.success) {
-                            window.open("https://teacherbackend.online-ide.de?" + SINGLEUSETOKEN + "=" + response.singleUseSessionToken + "&lang=" + language);
+                            // eigene Verwaltung (Lerngruppen und Konten) statt teacherbackend.online-ide.de
+                            window.open(SCHOOL_ADMIN_URL + "?" + SINGLEUSETOKEN + "=" + response.singleUseSessionToken + "&lang=" + language);
                             // window.open("http://localhost:3000?" + SINGLEUSETOKEN + "=" + response.singleUseSessionToken + "&lang=" + language);
                         }
                     }

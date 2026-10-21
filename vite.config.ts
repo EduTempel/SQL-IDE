@@ -44,6 +44,10 @@ export default {
     proxy: {
       '/servlet': 'http://localhost:5500',
       '/servlet/pushWebsocket': { target: 'ws://localhost:5500', ws: true },
+      // eigenes Backend: Verwaltung, API, IServ-Login
+      '/verwaltung': 'http://localhost:5500',
+      '/api': 'http://localhost:5500',
+      '/auth': 'http://localhost:5500',
       // '/worker': {
       //   rewrite: (path) => path.replace('/worker', '/dist/worker'),
       //   target: "http://localhost:4000"

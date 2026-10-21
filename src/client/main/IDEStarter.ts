@@ -17,6 +17,8 @@ import '/assets/css/databaseExplorer.css';
 import '/assets/css/dialog.css';
 import '/assets/css/databasedialogs.css';
 import '/assets/css/gsg-branding.css';     // Schulfarben und Login-Seite des GSG (zuletzt laden)
+import { showIServLoginIfEnabled } from './gui/SchoolBranding.js';
+showIServLoginIfEnabled();
 
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js';
 
