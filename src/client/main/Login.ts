@@ -100,7 +100,7 @@ export class Login {
 
         let isSilent = window.location.href.indexOf('silent') >= 0;
         if (!this.main.user || this.main.user.is_testuser) {
-            window.location.assign("/" + (isSilent ? "?silent=true" : ""));
+            window.location.assign(import.meta.env.BASE_URL + (isSilent ? "?silent=true" : ""));   // BASE_URL: "/" oder "/sql/"
             return;
         }
 
@@ -129,7 +129,7 @@ export class Login {
                     // window.location.assign("https://aai-test.vidis.schule/auth/realms/vidis/protocol/openid-connect/logout?ID_TOKEN_HINT=" + this.vidis_id_token + "&post_logout_redirect_uri=https%3A%2F%2Fonline-ide.de/vidisLogout");
                     window.location.assign("https://aai.vidis.schule/auth/realms/vidis/protocol/openid-connect/logout?ID_TOKEN_HINT=" + this.vidis_id_token + "&post_logout_redirect_uri=https%3A%2F%2Fsql-ide.de/vidisLogout");
                 } else {
-                    window.location.assign("/" + (isSilent ? "?silent=true" : ""));
+                    window.location.assign(import.meta.env.BASE_URL + (isSilent ? "?silent=true" : ""));   // BASE_URL: "/" oder "/sql/"
 
                 }
 
