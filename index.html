@@ -4,12 +4,12 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>SQL-IDE</title>
+    <title>SQL-IDE · GSG Osnabrück</title>
+    <link rel="icon" type="image/png" href="assets/graphics/gsg/favicon-64.png">
+    <link rel="apple-touch-icon" href="assets/graphics/gsg/apple-touch-icon.png">
+    <meta name="theme-color" content="#00376D">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <!-- VIDIS -->
-    <script src="https://repo.vidis.schule/repository/vidis-cdn/latest/vidisLogin.umd.js"
-        crossorigin="anonymous"></script>
 
 
     <link rel='stylesheet' type='text/css' media='screen' href='assets/fonts/fonts.css'>
@@ -39,95 +39,43 @@
     </div>
 
     <!-- Login-Seite -->
-    <div id="login">
-        <div id="jo_login_animations"></div>
-        <!-- <div id="login-heading">SQL-IDE</div> -->
-        <!-- <div id="login-alpha">(Vorsicht: Alpha-Version!)</div> -->
-        <img src="assets/graphics/SQL-IDE-Logo.png" alt="Logo der SQL-IDE"
-            style="width: 250px; margin: 30px auto 10px auto">
-        <div style="flex-grow: 1"></div>
-        <div id="loginformdiv">
-            <div id="login-center">
-                <form>
-                    <input id="login-username" type="text" placeholder="Benutzername" spellcheck="false" tabindex="1">
-                    <input id="login-password" type="password" placeholder="Passwort" spellcheck="false" tabindex="2">
-                    <div id="login-message"></div>
-                    <div id="login-button" tabindex="3">Login</div>
-                </form>
+    <!-- Login-Seite: angepasst für das Graf-Stauffenberg-Gymnasium Osnabrück (Stil: gsg-branding.css) -->
+    <div id="login" class="gsg-login">
+        <main class="gsg-login-main">
+            <div class="gsg-login-card">
+                <img class="gsg-login-logo" src="assets/graphics/gsg/logo-256.png"
+                    alt="Logo des Graf-Stauffenberg-Gymnasiums Osnabrück" width="112" height="112">
+                <h1 class="gsg-login-title">SQL-IDE</h1>
+                <p class="gsg-login-school">Graf-Stauffenberg-Gymnasium Osnabrück</p>
+                <div id="login-center">
+                    <form onsubmit="return false">
+                        <label class="gsg-sr-only" for="login-username">Benutzername</label>
+                        <input id="login-username" type="text" placeholder="Benutzername" spellcheck="false"
+                            autocomplete="username" autocapitalize="none" tabindex="1">
+                        <label class="gsg-sr-only" for="login-password">Passwort</label>
+                        <input id="login-password" type="password" placeholder="Passwort" spellcheck="false"
+                            autocomplete="current-password" tabindex="2">
+                        <div id="login-message" role="alert"></div>
+                        <div id="login-button" role="button" tabindex="3">Anmelden</div>
+                    </form>
+                </div>
+                <div id="login-spinner">
+                    <img src="assets/graphics/ball-triangle.svg" alt="">
+                </div>
             </div>
-        </div>
-        <div id="login-spinner">
-            <img src="assets/graphics/ball-triangle.svg">
-        </div>
-        <div class="jo_infodiv silent" style="display: none;">
-
-            <div class="jo_infodiv_line">
-                <a href="https://www.learn-sql.de/doku.php?id=sqlide:videotutorials:start" target="_blank">
-                    <div class="jo_infodiv_box" id="jo_video_button">
-                        <img src="assets/graphics/film.png" class="jo_infobox_leftimage" alt="">
-                        <div>Video-Tutorials zur SQL-IDE</div>
-                    </div>
-                </a>
-                <!-- <div class="jo_infodiv_box" id="jo_testuser-login-button">
-                    <img src="assets/graphics/test.png" class="jo_infobox_leftimage" alt="">
-                    <div>Login als Testuser (*)</div>
-                </div> -->
-                <a href="https://www.learnj.de/doku.php?id=ide:testlogins:start" target="_blank">
-                    <div class="jo_infodiv_box" id="jo_testlogins">
-                        <img src="assets/graphics/rocket.png" class="jo_infobox_leftimage" alt="">
-                        <div>Interesse?<br>(Test-)logins für Schulen</div>
-                    </div>
-                </a>
-
-                <a href="https://www.online-ide.de" target="_blank">
-                    <div class="jo_infodiv_box" id="jo_java">
-                        <img src="assets/graphics/learnj.png" class="jo_infobox_leftimage" alt="">
-                        <div>Hier geht's zur Java-IDE</div>
-                    </div>
-                </a>
-
-            </div>
-            <div class="jo_infodiv_line">
-                <a href="https://www.learn-sql.de" target="_blank">
-                    <div class="jo_infodiv_box" id="jo_learnj">
-                        <img src="assets/graphics/learnsql.png" class="jo_infobox_leftimage" alt="">
-                        <div>Interaktives SQL-Tutorial</div>
-                    </div>
-                </a>
-                <a href="https://github.com/martin-pabst/SQL-IDE" target="_blank">
-                    <div class="jo_infodiv_box" id="jo_embedded_ide">
-                        <img src="assets/graphics/forkme_left_green_007200.png" class="jo_infobox_forkme" alt="">
-                        <div style="font-size: 16pt;">Embedded<br> SQL-IDE - auch für deine Homepage!</div>
-                    </div>
-                </a>
-                <a href="https://www.embed.learn-sql.de/createwrapper.html" target="_blank">
-                    <div class="jo_infodiv_box" id="jo_moodle_mebis">
-                        <img src="assets/graphics/moodle_mebis.png" class="jo_infobox_leftimage" alt="">
-                        <div style="font-size: 12pt;">SQL üben innerhalb von Moodle-/Mebis-Kursen</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div style="flex-grow: 4" class="jo_login_div">
-        </div>
-        <div id="login-footer">
-            <!-- <div>
-                (*) Ohne Repository und Lehrkraft-Funktionen
-            </div> -->
-            <!-- <div>
-                <vidis-login loginurl="https://aai.vidis.schule/auth/realms/vidis/protocol/openid-connect/auth?client_id=online-ide-o&response_type=code&scope=openid&redirect_uri=https://sql-ide.de/vidisRedirect" size="S" cookie="false"></vidis-login>
-            </div> -->
-
-            <div class="silent vidis" style="display: none;">
-                <!-- <a href="https://aai-test.vidis.schule/auth/realms/vidis/protocol/openid-connect/auth?client_id=online-ide-o&response_type=code&scope=openid&redirect_uri=https://sql-ide.de/vidisRedirect">VIDIS</a> -->
-                <a href="https://aai.vidis.schule/auth/realms/vidis/protocol/openid-connect/auth?client_id=online-ide-o&response_type=code&scope=openid&redirect_uri=https://sql-ide.de/vidisRedirect">VIDIS-Prod (Test)</a>
-            </div>
+        </main>
+        <footer id="login-footer">
+            <div class="gsg-footer-school">Graf-Stauffenberg-Gymnasium Osnabrück</div>
             <div id="login-datenschutz">
-                <a href="https://www.learnj.de/doku.php?id=ide:datenschutzerklaerung"
-                    target="_blank">Datenschutzerklärung</a> -
-                <a href="https://www.learnj.de/doku.php?id=ide:impressum" target="_blank">Impressum</a>
+                <a href="https://gsg-os.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+                <a href="https://gsg-os.de/datenschutzerklaerung/" target="_blank" rel="noopener">Datenschutz</a>
+                <a href="https://github.com/EduTempel/online-ide" target="_blank" rel="noopener">Quellcode</a>
             </div>
-        </div>
+            <div class="gsg-credits">
+                Basiert auf der <a href="https://github.com/martin-pabst/SQL-IDE" target="_blank"
+                    rel="noopener">SQL-IDE</a> von Martin Pabst (GNU GPL v3)
+            </div>
+        </footer>
     </div>
 
     <!-- Hauptseite -->

@@ -1,4 +1,5 @@
 import * as monaco from 'monaco-editor'
+import { applySchoolBranding } from './SchoolBranding.js'
 
 export type Theme = {
     name: string,
@@ -12,6 +13,7 @@ export class ThemeManager {
 
     constructor() {
         this.initThemes();
+        applySchoolBranding(this.themes);
     }
 
     switchTheme(name: string) {
