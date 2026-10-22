@@ -22,6 +22,7 @@ import '/assets/css/icons.css';
 import '/assets/css/projectexplorer.css';
 import type { IconButtonComponent } from '../../../tools/IconButtonComponent.js';
 import { DatabaseSettingsDialog } from './DatabaseSettingsDialog.js';
+import { openSchoolStartPage } from './SchoolStartPage.js';
 import { Module } from '../../compiler/parser/Module.js';
 
 
@@ -489,6 +490,18 @@ export class ProjectExplorer {
                     });
 
                 if (!node.isFolder) {
+
+                    // Teilen per Link (eigenes Backend: Startseite /start/)
+                    if (this.main.workspacesOwnerId == null || this.main.workspacesOwnerId == this.main.user.id) {
+                        cmiList.push({
+                            caption: "Per Link teilen ...",
+                            callback: () => {
+                                this.main.networkManager.sendUpdatesAsync(true);   // aktuellen Stand speichern
+                                openSchoolStartPage(workspace.id);
+                            }
+                        });
+                    }
+
                     if (this.main.user.is_teacher && this.main.teacherExplorer.classPanel.size(true) > 0) {
                         cmiList.push({ caption: '-', callback: () => { } });
 

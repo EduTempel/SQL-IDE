@@ -9,6 +9,7 @@ import jQuery from "jquery";
 import { AllDatabaseExporterImporter } from "../../../tools/AllDatabaseExporterImporter.js";
 import { downloadFile } from "../../../tools/HtmlTools.js";
 import { SCHOOL_ADMIN_URL, SCHOOL_IMPRINT_URL, SCHOOL_PRIVACY_URL } from "./SchoolBranding.js";
+import { openSchoolStartPage } from "./SchoolStartPage.js";
 import { MainMenuMessages } from "./language/MainMenuMessages.js";
 import { SettingsGUI } from "../../settings/SettingsGUI.js";
 
@@ -238,6 +239,14 @@ export class MainMenu {
                     }
                 }
             )
+        }
+
+        // eigene Startseite: Anwendungen, Projekte per Link teilen
+        if (user != null) {
+            mainMenu.items[0].subMenu.items.push({
+                identifier: "Startseite und geteilte Links",
+                action: () => { openSchoolStartPage(); }
+            });
         }
 
         mainMenu.items[0].subMenu.items.push({
