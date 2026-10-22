@@ -5,6 +5,7 @@ import { Module } from "../compiler/parser/Module.js";
 import { SemicolonAngel } from "../compiler/parser/SemicolonAngel.js";
 import { DatabaseTool } from "../sqljs-worker/DatabaseTools.js";
 import { checkIfMousePresent, findGetParameter, getCookieValue } from "../../tools/HtmlTools.js";
+import { portalSingleUseToken } from "./gui/SchoolStartPage.js";
 import { Workspace } from "../workspace/Workspace.js";
 import { ActionManager } from "./gui/ActionManager.js";
 import { BottomDiv } from "./gui/BottomDiv.js";
@@ -106,6 +107,10 @@ export class Main implements MainBase {
             this.login.loginWithVidis(singleUseToken);
         } else {
             this.login.initGUI();
+            // auf der Startseite schon angemeldet? Dann ohne Passwort weiter (GSG)
+            portalSingleUseToken("sql").then((token) => {
+                if (token) this.login.loginWithVidis(token);
+            });
         }
 
 

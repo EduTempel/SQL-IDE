@@ -7,6 +7,7 @@ import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker'
 import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker'
 
 
+import '/assets/fonts/fonts.css';
 import '/assets/css/editor.css';
 import '/assets/css/editorStatic.css';
 import '/assets/css/bottomdiv.css';
