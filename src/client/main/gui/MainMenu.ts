@@ -8,7 +8,7 @@ import { TemplateUploader } from "../../../tools/TemplateUploader.js";
 import jQuery from "jquery";
 import { AllDatabaseExporterImporter } from "../../../tools/AllDatabaseExporterImporter.js";
 import { downloadFile } from "../../../tools/HtmlTools.js";
-import { SCHOOL_ADMIN_URL, SCHOOL_IMPRINT_URL, SCHOOL_PRIVACY_URL } from "./SchoolBranding.js";
+import { SCHOOL_ADMIN_URL, SCHOOL_CREDITS_URL, SCHOOL_IMPRINT_URL, SCHOOL_PRIVACY_URL } from "./SchoolBranding.js";
 import { openSchoolStartPage } from "./SchoolStartPage.js";
 import { MainMenuMessages } from "./language/MainMenuMessages.js";
 import { SettingsGUI } from "../../settings/SettingsGUI.js";
@@ -211,6 +211,10 @@ export class MainMenu {
                             {
                                 identifier: "Datenschutzerklärung...",
                                 link: SCHOOL_PRIVACY_URL
+                            },
+                            {
+                                identifier: "Mitwirkende und Lizenzen...",
+                                link: SCHOOL_CREDITS_URL
                             },
                             {
                                 identifier: "<div class='jo_menu_version'>" + "Version " + APP_VERSION + " (" + BUILD_DATE + ")</div>",

@@ -50,6 +50,8 @@ export default {
       '/auth': 'http://localhost:5500',
       '/start': 'http://localhost:5500',    // Startseite
       '/s/': 'http://localhost:5500',       // geteilte Links
+      '/branding': 'http://localhost:5500',    // Logo und Schulfarben (Verwaltung → Aussehen)
+      '/mitwirkende': 'http://localhost:5500', // Mitwirkende und Lizenzen
       // '/worker': {
       //   rewrite: (path) => path.replace('/worker', '/dist/worker'),
       //   target: "http://localhost:4000"
