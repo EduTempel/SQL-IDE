@@ -10,6 +10,7 @@ import { AllDatabaseExporterImporter } from "../../../tools/AllDatabaseExporterI
 import { downloadFile } from "../../../tools/HtmlTools.js";
 import { SCHOOL_ADMIN_URL, SCHOOL_CREDITS_URL, SCHOOL_IMPRINT_URL, SCHOOL_PRIVACY_URL } from "./SchoolBranding.js";
 import { openSchoolStartPage } from "./SchoolStartPage.js";
+import { openSqlHandbook } from "../../handbook/SqlHandbookTab.js";
 import { MainMenuMessages } from "./language/MainMenuMessages.js";
 import { SettingsGUI } from "../../settings/SettingsGUI.js";
 
@@ -200,6 +201,11 @@ export class MainMenu {
                     identifier: "Hilfe", subMenu:
                     {
                         items: [
+                            {
+                                // GSG: Handbuch mit Beispielen (Reiter rechts)
+                                identifier: "Handbuch SQL",
+                                action: () => { openSqlHandbook(); }
+                            },
                             {
                                 identifier: "Über die Online-IDE...",
                                 link: "https://www.learnj.de/doku.php?id=javaonline:ueber"

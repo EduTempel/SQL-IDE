@@ -1,6 +1,8 @@
 import { makeTabs } from "../../../tools/HtmlTools.js";
 import { MainBase } from "../MainBase.js";
 import jQuery from "jquery";
+import { addSqlHandbookTab } from "../../handbook/SqlHandbookTab.js";
+import { splitRightDiv } from "../../rightpanel/RightPanel.js";
 
 export class RightDiv {
 
@@ -51,6 +53,15 @@ export class RightDiv {
 
     initGUI() {
         makeTabs(this.$rightDiv);
+        // GSG: rechts zweigeteilt wie in der Java-IDE – oben Datenbank, unten Handbuch
+        if (!this.main.isEmbedded()) {
+            try {
+                const split = splitRightDiv(this.$rightDiv[0], "Handbuch", "Handbuch SQL: Erklärungen und Beispiele zum Ausprobieren");
+                addSqlHandbookTab(this.main, split);
+            } catch (e) {
+                console.error(e);
+            }
+        }
     }
 
 

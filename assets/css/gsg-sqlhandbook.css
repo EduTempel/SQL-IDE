@@ -1,0 +1,125 @@
+/* Handbuch SQL (SqlHandbookTab.ts) – unterer Teil des rechten Bereichs */
+
+.gsg-sqlhb {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    font: 13px/1.45 Roboto, "Segoe UI", sans-serif;
+    color: var(--fontColorNormal, #c2cccc);
+}
+
+.gsg-sqlhb-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--slider, #414141);
+    flex: none;
+}
+.gsg-sqlhb-title { font-weight: 600; white-space: nowrap; color: var(--fontColorLight, #e7e7e7); }
+.gsg-sqlhb-search {
+    flex: 1;
+    min-width: 60px;
+    font: inherit;
+    padding: 3px 8px;
+    border: 1px solid var(--slider, #666);
+    border-radius: 5px;
+    background: var(--backgroundDark, #1e1e1e);
+    color: inherit;
+}
+.gsg-sqlhb-search:focus { outline: 2px solid var(--brand-accent, #45B82F); outline-offset: -1px; }
+
+.gsg-sqlhb-content { flex: 1; min-height: 0; overflow: auto; padding: 8px 10px 24px; }
+
+.gsg-sqlhb-intro p { margin: 0 0 8px; }
+.gsg-sqlhb-schema {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12.5px;
+    padding: 6px 10px;
+    margin-bottom: 4px;
+    border-left: 3px solid var(--brand-accent, #45B82F);
+    background: rgba(127, 127, 127, .12);
+    border-radius: 0 6px 6px 0;
+}
+.gsg-sqlhb-schema u { text-underline-offset: 2px; }
+.gsg-sqlhb-note { font-size: 12px; opacity: .8; }
+
+.gsg-sqlhb-section { margin: 6px 0; border: 1px solid var(--slider, #414141); border-radius: 6px; }
+.gsg-sqlhb-section > summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--fontColorLight, #e7e7e7);
+    list-style-position: inside;
+}
+.gsg-sqlhb-section > summary:hover { background: rgba(127, 127, 127, .14); }
+.gsg-sqlhb-icon { width: 1.4em; text-align: center; flex: none; }
+.gsg-sqlhb-stitle { flex: 1; }
+.gsg-sqlhb-count {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0 7px;
+    border-radius: 999px;
+    border: 1px solid var(--slider, #555);
+    opacity: .8;
+}
+.gsg-sqlhb-body { padding: 0 10px 8px; }
+
+.gsg-sqlhb-text p { margin: 4px 0; }
+.gsg-sqlhb-text code, .gsg-sqlhb-intro code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    padding: 0 3px;
+    border-radius: 3px;
+    background: rgba(127, 127, 127, .2);
+}
+
+.gsg-sqlhb-entry { padding: 8px 0 10px; border-top: 1px solid rgba(127, 127, 127, .25); }
+.gsg-sqlhb-etitle { margin: 2px 0 2px; font-size: 13.5px; color: var(--brand-accent, #45B82F); }
+
+.gsg-sqlhb-sql {
+    margin: 6px 0;
+    padding: 8px 10px;
+    background: rgba(127, 127, 127, .13);
+    border-radius: 6px;
+    font: 12.5px/1.45 Consolas, "Courier New", monospace;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+.gsg-sqlhb-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.gsg-sqlhb-button {
+    font: 600 12px/22px Roboto, "Segoe UI", sans-serif;
+    padding: 0 10px;
+    border: 1px solid var(--slider, #555);
+    border-radius: 5px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.gsg-sqlhb-button:hover { background: rgba(127, 127, 127, .2); }
+.gsg-sqlhb-button:disabled { opacity: .6; cursor: default; }
+.gsg-sqlhb-button:focus-visible { outline: 2px solid var(--brand-accent, #45B82F); outline-offset: 1px; }
+.gsg-sqlhb-primary { background: var(--brand-primary, #00376D); border-color: transparent; color: #fff; }
+.gsg-sqlhb-primary:hover { background: var(--brand-primary-hover, #0b4a8a); }
+
+.gsg-sqlhb-result:empty { display: none; }
+.gsg-sqlhb-result { margin-top: 8px; font-size: 12.5px; }
+.gsg-sqlhb-error { color: #e57373; }
+.gsg-sqlhb-tablewrap { overflow-x: auto; }
+.gsg-sqlhb-table { border-collapse: collapse; font-size: 12.5px; }
+.gsg-sqlhb-table th, .gsg-sqlhb-table td {
+    border: 1px solid rgba(127, 127, 127, .45);
+    padding: 2px 8px;
+    text-align: left;
+    white-space: nowrap;
+}
+.gsg-sqlhb-table th { background: rgba(127, 127, 127, .2); font-weight: 600; }
+.gsg-sqlhb-table td.gsg-sqlhb-num { text-align: right; }
+.gsg-sqlhb-table td.gsg-sqlhb-null { font-style: italic; opacity: .6; }
+.gsg-sqlhb-rows { margin-top: 3px; font-size: 11.5px; opacity: .75; }
+.gsg-sqlhb-empty { opacity: .8; }

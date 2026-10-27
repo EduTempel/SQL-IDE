@@ -1,0 +1,75 @@
+/* Rechter Bereich in zwei Teilen (RightPanel.ts): oben Datenbank, unten Handbuch – wie in der Java-IDE */
+
+#rightdiv-inner.gsg-split {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.gsg-right-top {
+    position: relative;
+    isolation: isolate;
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+.gsg-right-top > .jo_tabs {
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+    overflow: auto;
+}
+
+.gsg-right-bottom {
+    position: relative;
+    flex: none;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+.gsg-right-bottom > .jo_tabheadings {
+    position: relative;
+    margin-bottom: 2px;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+.gsg-right-body {
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+.gsg-right-bottom.gsg-collapsed > .gsg-right-body { display: none; }
+
+.gsg-right-splitter {
+    position: relative;
+    flex: none;
+    height: 5px;
+    cursor: row-resize;
+    background: var(--slider, #555);
+    touch-action: none;
+}
+.gsg-right-splitter:hover,
+.gsg-right-splitter.gsg-dragging { background: var(--brand-accent, #45B82F); }
+
+.gsg-right-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 20px;
+    margin-top: -2px;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.gsg-right-toggle:hover { background: rgba(127, 127, 127, .25); }
+
+/* Reiter mit Symbol und kurzem Namen */
+.gsg-tabheading { white-space: nowrap; }
+.gsg-tab-icon { vertical-align: -3px; margin-right: 4px; flex: none; }
+.gsg-right-toggle .gsg-tab-icon { margin: 0; vertical-align: 0; }
