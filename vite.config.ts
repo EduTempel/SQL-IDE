@@ -52,6 +52,7 @@ export default {
       '/s/': 'http://localhost:5500',       // geteilte Links
       '/branding': 'http://localhost:5500',    // Logo und Schulfarben (Verwaltung → Aussehen)
       '/mitwirkende': 'http://localhost:5500', // Mitwirkende und Lizenzen
+      '/lehrkraefte': 'http://localhost:5500', // Lehrerhandbuch Blöcke
       // '/worker': {
       //   rewrite: (path) => path.replace('/worker', '/dist/worker'),
       //   target: "http://localhost:4000"
